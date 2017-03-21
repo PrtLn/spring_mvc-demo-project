@@ -19,7 +19,7 @@
           	
           			<ul class="dropdown-menu" role="menu">
             			<li><a href="<spring:url value="/project/add"/>">Add</a></li>
-            			<li><a href="#">Find</a></li>
+            			<li><a href="../project_add.jsp">Find</a></li>
           			</ul>
           			
         		</li>
