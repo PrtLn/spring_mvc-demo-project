@@ -4,4 +4,21 @@
   <artifactId>spring_mvc-demo-project</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>spring_mvc-demo-project</name>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-webmvc</artifactId>
+  		<version>4.3.7.RELEASE</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.slf4j</groupId>
+  		<artifactId>slf4j-log4j13</artifactId>
+  		<version>1.0.1</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>log4j</groupId>
+  		<artifactId>log4j</artifactId>
+  		<version>1.2.17</version>
+  	</dependency>
+  </dependencies>
 </project>
