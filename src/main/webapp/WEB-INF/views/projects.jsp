@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -29,9 +28,13 @@
 				<tr>
 					<th>Name</th><th>Sponsor</th><th>Description</th>
 				</tr>
-				<tr>
-					<th>Project Name</th><th>Sponsor Name</th><th>Description</th>
-				</tr>
+				
+				<c:forEach items="${projects}" var="project">
+					<tr>
+						<th>${project.name}</th><th>${project.sponsor}</th><th>${project.description}</th>
+					</tr>
+				</c:forEach>
+								
 			</tbody>
 		</table>		
 	</div>
