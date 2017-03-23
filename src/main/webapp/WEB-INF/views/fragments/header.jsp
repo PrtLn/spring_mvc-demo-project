@@ -18,7 +18,7 @@
           				aria-expanded="false">Projects <span class="caret"></span></a>
           	
           			<ul class="dropdown-menu" role="menu">
-            			<li><a href='<spring:url value="/project/add"/>' method="get">Add</a></li>
+            			<li><a href='<spring:url value="/project/add"/>'>Add</a></li>
             			<li><a href='<spring:url value="/project/find"/>'>Find</a></li>
           			</ul>
           			
@@ -31,7 +31,7 @@
           				aria-expanded="false">Resources <span class="caret"></span></a>
           		
           			<ul class="dropdown-menu" role="menu">
-            			<li><a href="#">Add</a></li>
+            			<li><a href='<spring:url value="/resource/add"/>'>Add</a></li>
             			<li><a href="#">Find</a></li>
           			</ul>
         		
