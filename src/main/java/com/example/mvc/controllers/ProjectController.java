@@ -1,5 +1,8 @@
 package com.example.mvc.controllers;
 
+import javax.servlet.http.HttpSession;
+
+import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,13 +32,20 @@ public class ProjectController {
 	}
 	
 	@RequestMapping(value="/add", method=RequestMethod.GET)	
-	public String addProject() {
+	public String addProject(HttpSession session) {
+		
+		session.setAttribute("token", "123456");
+		
 		System.out.println("invoking addProject method");		
 		return "project_add";
 	}
 	
 	@RequestMapping(value="/add", method=RequestMethod.POST)	
-	public String saveProject() {
+	public String saveProject(HttpServletRequest request, HttpSession session) {
+		
+		System.out.println(session.getAttribute("token"));
+		System.out.println(request.getParameter("name"));
+				
 		System.out.println("invoking saveProject method");		
 		return "project_add";
 	}
