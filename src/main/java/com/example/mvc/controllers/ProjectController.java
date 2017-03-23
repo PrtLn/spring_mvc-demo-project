@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -32,17 +33,16 @@ public class ProjectController {
 	}
 	
 	@RequestMapping(value="/add", method=RequestMethod.GET)	
-	public String addProject(HttpSession session) {
-		
-		session.setAttribute("token", "123456");
-		
+	public String addProject(HttpSession session) {		
+		session.setAttribute("token", "123456");		
 		System.out.println("invoking addProject method");		
 		return "project_add";
 	}
 	
 	@RequestMapping(value="/add", method=RequestMethod.POST)	
-	public String saveProject(Project project) {
-		System.out.println("invoking saveProject method");		
+	public String saveProject(@ModelAttribute Project project) {
+		System.out.println("invoking saveProject method");	
+		System.out.println(project);
 		return "project_add";
 	}
 	
