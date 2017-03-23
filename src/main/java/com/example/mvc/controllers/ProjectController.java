@@ -8,8 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.mvc.data.entities.Project;
 import com.example.mvc.data.services.ProjectService;
 
 @Controller
@@ -41,29 +41,9 @@ public class ProjectController {
 	}
 	
 	@RequestMapping(value="/add", method=RequestMethod.POST)	
-	public String saveProject(@RequestParam("name") Long name, HttpSession session) {
-		
-		System.out.println(session.getAttribute("token"));
-		System.out.println(name);
-				
+	public String saveProject(Project project) {
 		System.out.println("invoking saveProject method");		
 		return "project_add";
 	}
-	
-	
-	// handling method for the selecting options	
-	@RequestMapping(value="/add", method=RequestMethod.POST, params={"type=multi"})	
-	public String saveMultiYearProject() {
-		System.out.println("invoking saveMultiProject method");		
-		return "project_add";
-	}
-	
-	// handling method for the CheckBox selection
-	@RequestMapping(value="/add", method=RequestMethod.POST, params={"type=multi", "special"})	
-	public String saveSpecialProject() {
-		System.out.println("invoking saveSpecialProject method");		
-		return "project_add";
-	}
-	
 	
 }
