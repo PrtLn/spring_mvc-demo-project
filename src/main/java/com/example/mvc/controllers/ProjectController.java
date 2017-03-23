@@ -41,7 +41,7 @@ public class ProjectController {
 	}
 	
 	@RequestMapping(value="/add", method=RequestMethod.POST)	
-	public String saveProject(@RequestParam("name") String name, HttpSession session) {
+	public String saveProject(@RequestParam("name") Long name, HttpSession session) {
 		
 		System.out.println(session.getAttribute("token"));
 		System.out.println(name);
