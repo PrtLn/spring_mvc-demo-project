@@ -22,6 +22,14 @@ public class ResourceController {
 				new String[]{"Material", "Other", "Staff", "Technical Equipment"}));
 		model.addAttribute("typeOptions", options);
 		
+		List<String> radios = new LinkedList<>(Arrays.asList(
+				new String[]{"Hours", "Piece", "Tons"}));
+		model.addAttribute("radioOptions", radios);
+		
+		List<String> checks = new LinkedList<>(Arrays.asList(
+				new String[]{"Lead Time", "Special Rate", "Requires Approval"}));
+		model.addAttribute("checkOptions", checks);
+
 		model.addAttribute("resource", new Resource());
 		return "resource_add";
 	}
@@ -29,6 +37,6 @@ public class ResourceController {
 	@RequestMapping("/save")
 	public String save(@ModelAttribute Resource resource) {
 		System.out.println(resource);
-		return "resource_add";
+		return "redirect:/resource/add";
 	}
 }
