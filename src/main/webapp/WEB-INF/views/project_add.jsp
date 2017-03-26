@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -20,7 +21,10 @@
 	
 	<div class="container">
 		<div class="row">
-			<form action='<spring:url value="/project/add"/>' method="post" class="col-md-8 col-md-offset-2">
+							
+			<spring:url value="/project/add" var="formUrl"/>
+			<form:form modelAttribute="project" action="${formUrl}"  
+						method="post" cssClass="col-md-8 col-md-offset-2">
 			
 				<div class="form-group">
 					<label for="project-name">Name</label>
@@ -38,9 +42,21 @@
 				</div>
 			
 				<div class="form-group">
-					<label for="sponsor">Sponsor</label>
-					<input id="sponsor" type="text" 
-							class="form-control" name="sponsor"/>
+					<label for="sponsor-name">Sponsor Name</label>
+					<form:input id="sponsor-name"
+							cssClass="form-control" path="sponsor.name"/>
+				</div>
+				
+				<div class="form-group">
+					<label for="sponsor-phone">Sponsor Phone</label>
+					<form:input id="sponsor-phone"
+							cssClass="form-control" path="sponsor.phone"/>
+				</div>
+				
+				<div class="form-group">
+					<label for="sponsor-email">Sponsor Email</label>
+					<form:input id="sponsor-email" 
+							cssClass="form-control" path="sponsor.email"/>
 				</div>
 			
 				<div class="form-group">
@@ -65,8 +81,9 @@
 					<input id="special" name="special" type="checkbox"/>
 				</div>
 	
-				<button type="submit" class="btn btn-default">Submit</button>	
-			</form>			
+				<button type="submit" class="btn btn-default">Submit</button>
+					
+			</form:form>			
 		</div>
 	</div>	
 </body>
