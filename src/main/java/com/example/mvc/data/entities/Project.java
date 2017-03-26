@@ -1,6 +1,7 @@
 package com.example.mvc.data.entities;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class Project {
 
@@ -21,6 +22,8 @@ public class Project {
 	private boolean special;
 
 	private String type;
+	
+	private List<String> pointsOfContact;
 	
 	
 	public Long getProjectId() {
@@ -96,11 +99,19 @@ public class Project {
 		this.type = type;
 	}
 
+	public List<String> getPointsOfContact() {
+		return pointsOfContact;
+	}
+
+	public void setPointsOfContact(List<String> pointsOfContact) {
+		this.pointsOfContact = pointsOfContact;
+	}
+
 	@Override
 	public String toString() {
 		return "Project [projectId=" + projectId + ", name=" + name + ", description=" + description + ", sponsor="
 				+ sponsor + ", authorizedHours=" + authorizedHours + ", authorizedFunds=" + authorizedFunds + ", year="
-				+ year + ", special=" + special + ", type=" + type + "]";
+				+ year + ", special=" + special + ", type=" + type + ", pointsOfContact=" + pointsOfContact + "]";
 	}
 	
 }
