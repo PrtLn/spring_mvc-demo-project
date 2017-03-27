@@ -8,16 +8,32 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.example.mvc.data.entities.Resource;
 
 @Controller
 @RequestMapping("/resource")
+@SessionAttributes("resource")
 public class ResourceController {
 	
 	@RequestMapping("/add")
 	public String add(Model model) {
+		System.out.println("invoking add() method");
 		return "resource_add";
+	}
+	
+	@RequestMapping("/review")
+	public String review(@ModelAttribute Resource resource) {
+		System.out.println("invoking review() method");
+		return "resource_review";
+	}
+	
+	@RequestMapping("/save")
+	public String save(@ModelAttribute Resource resource) {
+		System.out.println("invoking save() method");
+		System.out.println(resource);
+		return "redirect:/resource/add";
 	}
 	
 	@ModelAttribute("resource")
@@ -45,11 +61,5 @@ public class ResourceController {
 		return new LinkedList<>(Arrays.asList(new String[]{
 				"Lead Time", "Special Rate", "Requires Approval"
 				}));
-	}
-
-	@RequestMapping("/save")
-	public String save(@ModelAttribute Resource resource) {
-		System.out.println(resource);
-		return "redirect:/resource/add";
 	}
 }

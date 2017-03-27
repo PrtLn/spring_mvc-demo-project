@@ -28,7 +28,7 @@
 			<h2>Resource</h2>
 		</div>
 		
-		<spring:url value="/resource/save" var="formUrl"/>
+		<spring:url value="/resource/review" var="formUrl"/>
 		<form:form action="${formUrl}" method="POST" modelAttribute="resource">
 		
 			<div class="row">
