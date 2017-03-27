@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 
 import com.example.mvc.data.entities.Resource;
 
@@ -30,9 +31,10 @@ public class ResourceController {
 	}
 	
 	@RequestMapping("/save")
-	public String save(@ModelAttribute Resource resource) {
+	public String save(@ModelAttribute Resource resource, SessionStatus session) {
 		System.out.println("invoking save() method");
 		System.out.println(resource);
+		session.setComplete();
 		return "redirect:/resource/add";
 	}
 	
