@@ -58,6 +58,8 @@ public class ProjectController {
 			System.out.println("The project validated");
 		} else {
 			System.out.println("The project did not validated");
+			
+			return "project_add";
 		}
 		
 		System.out.println("invoking saveProject method");	

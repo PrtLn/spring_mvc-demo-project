@@ -30,6 +30,7 @@
 					<label for="project-name">Name</label>
 					<input type="text" id="project-name" 
 							class="form-control" name="name"/>
+					<form:errors path="name" cssStyle="color:red" />
 				</div>
 				
 				<div class="form-group">
@@ -74,6 +75,7 @@
 				<div class="form-group">
 					<label for="project-name">Description</label>
 					<textarea class="form-control" name="description" rows="3"></textarea>
+					<form:errors path="description" cssStyle="color:red" />
 				</div>
 				
 				<div class="form-group">

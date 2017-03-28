@@ -11,7 +11,7 @@ public class Project {
 
 	private String name;
 
-	@NotBlank
+	@NotBlank(message = "You must provide a description")
 	private String description;
 
 	private Sponsor sponsor;
